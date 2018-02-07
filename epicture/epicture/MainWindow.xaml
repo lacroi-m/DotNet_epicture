@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left"
+                   Margin="10"
+                   TextWrapping="Wrap"
+                   Text="Initial"
+                   VerticalAlignment="Top"
+                   Loaded="TextBlock_Loaded"/>
     </Grid>
 </Window>
