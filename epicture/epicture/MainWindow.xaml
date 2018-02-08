@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <TextBox Grid.Row="1"  Name="MyTextBox" Margin="10" VerticalAlignment="Top"/>
+        <Button Grid.Row="2" Content="OK" Click="Button_Click" Margin="40" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left"
-                   Margin="10"
+                   Margin="100"
                    TextWrapping="Wrap"
                    Text="Initial"
                    VerticalAlignment="Top"
                    Loaded="TextBlock_Loaded"/>
     </Grid>
 </Window>
+    
