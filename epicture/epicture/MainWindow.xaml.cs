@@ -316,14 +316,13 @@ namespace epicture
                 Filetype = Imgur.API.Enums.ImageFileType.Gif;
             else if (type.Text == "Anigif")
                 Filetype = Imgur.API.Enums.ImageFileType.Anigif;
-            var gallerys = await endpoint.SearchGalleryAdvancedAsync(null, null, search, null, Filetype, null, Imgur.API.Enums.GallerySortOrder.Time);
+            var gallerys = await endpoint.SearchGalleryAdvancedAsync(search ,null, null ,null, Filetype, null, Imgur.API.Enums.GallerySortOrder.Time);
             foreach (var gallery in gallerys)
             {
                 if (gallery.GetType() != typeof(Imgur.API.Models.Impl.GalleryAlbum))
                 {
                     Imgur.API.Models.Impl.GalleryImage tip = (Imgur.API.Models.Impl.GalleryImage)gallery;
                     ListBoxContent content = new ListBoxContent();
-                    //foreach(var futur in )
                     content.Url = tip.Link;
                     Contents.Add(content);
                     continue;
