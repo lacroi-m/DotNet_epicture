@@ -23,16 +23,29 @@
     <Grid>
         
         <TextBox Name ="searching" Height="23" TextWrapping="Wrap" Text="" Margin="10,10,10,0" VerticalAlignment="Top"/>
-        <Button Grid.Row="2" Content="OK"  Click="onTextChangedSearch" Margin="40" Width="90" VerticalAlignment="Top"/>
+        <Button Grid.Row="2" Content="OK"  Click="onTextChangedSearch" Margin="40, 44, 200, 10" Width="90" VerticalAlignment="Top"/>
 
         <ComboBox Name="type"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,40,0,0" >
 
 
-            <ComboBoxItem IsSelected="True">all</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">all types</ComboBoxItem>
             <ComboBoxItem>Jpg</ComboBoxItem>
             <ComboBoxItem>Png</ComboBoxItem>
             <ComboBoxItem>Gif</ComboBoxItem>
             <ComboBoxItem>Anigif</ComboBoxItem>
+
+
+        </ComboBox>
+        <ComboBox Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,40,150,10" >
+
+
+            <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
+            <ComboBoxItem>Small</ComboBoxItem>
+            <ComboBoxItem>Mediuù</ComboBoxItem>
+            <ComboBoxItem>Big</ComboBoxItem>
+            <ComboBoxItem>Large</ComboBoxItem>
+            <ComboBoxItem>Hudge</ComboBoxItem>
+
 
 
         </ComboBox>

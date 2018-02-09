@@ -316,7 +316,21 @@ namespace epicture
                 Filetype = Imgur.API.Enums.ImageFileType.Gif;
             else if (type.Text == "Anigif")
                 Filetype = Imgur.API.Enums.ImageFileType.Anigif;
-            var gallerys = await endpoint.SearchGalleryAdvancedAsync(search ,null, null ,null, Filetype, null, Imgur.API.Enums.GallerySortOrder.Time);
+
+            Imgur.API.Enums.ImageSize? Fileformat = null;
+            if (format.Text == "Small")
+                Fileformat = Imgur.API.Enums.ImageSize.Small;
+            else if (format.Text == "Mediu!")
+                Fileformat = Imgur.API.Enums.ImageSize.Med;
+            else if (format.Text == "Big")
+                Fileformat = Imgur.API.Enums.ImageSize.Big;
+            else if (format.Text == "Large")
+                Fileformat = Imgur.API.Enums.ImageSize.Lrg;
+            else if (format.Text == "Hudge")
+                Fileformat = Imgur.API.Enums.ImageSize.Huge;
+
+
+            var gallerys = await endpoint.SearchGalleryAdvancedAsync(search ,null, null ,null, Filetype, Fileformat, Imgur.API.Enums.GallerySortOrder.Time);
             foreach (var gallery in gallerys)
             {
                 if (gallery.GetType() != typeof(Imgur.API.Models.Impl.GalleryAlbum))
