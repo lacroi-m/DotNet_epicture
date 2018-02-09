@@ -28,7 +28,7 @@ namespace epicture
             StackPanel myStackPanel = new StackPanel();
 
             //Create TextBox
-            //TextBox myTextBox = new TextBox();
+            //TextBox myTextBox = new TextBox();0
            // myTextBox.Width = 200;
 
             
@@ -47,12 +47,29 @@ namespace epicture
     public partial class MainWindow : Window
     {
         string search;
-        string str = "http://qnimate.com/wp-content/uploads/2014/03/images2.jpg";
+        string str = "";
         List<string> url = new List<string>();
         int list = 0;
         const string apiKey = "1b83043f069825ebe46685c2a1ba4bc9";
         const string password = "ed73e0b97611e032";
 
+        public class DisplayImage
+        {
+            public string Url { get; set; }
+            public DisplayImage() { }
+            public DisplayImage(string url)
+            {
+                this.Url = url;
+            }   
+        }
+
+
+
+        public string contents;
+        public string Contents
+        {
+            get { return contents; }
+        }
 
         Flickr flickr = new Flickr(apiKey);
         public MainWindow()
@@ -64,14 +81,16 @@ namespace epicture
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             search = MyTextBox.Text;
             var options = new PhotoSearchOptions
             {
                 Tags = search,
-                PerPage = 1,
+                PerPage = 5,
                 Page = 1
             };
             PhotoCollection photos = flickr.PhotosSearch(options);
+           flickr.
 
             // Get TextBlock reference.
             var block = sender as TextBlock;
@@ -92,29 +111,25 @@ namespace epicture
                 myBitmapImage.EndInit();
                 image.Source = myBitmapImage;
                 url.Add(photo.WebUrl);
-                MyTextBox.Text = photo.Farm;
                 //appeler la fonction qui charge les images via l'url
                 textBlock.Name = "yo";
                 //du coup ça ça affiche le dernier url.
                 line++;
                 // MyLabel.Content = MyTextBox.Text;
+                contents = "https://farm" + photo.Farm + ".staticflickr.com/" + photo.Server + "/" + photo.PhotoId + "_" + photo.Secret + ".jpg";
+                MyTextBox.Text = contents;
+                
             }
         }
 
         private void TextBlock_Loaded(object sender, RoutedEventArgs e)
         {
+        }
 
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-
-            
-                //s'occper des favoris
-
-                //s'occuper de imgbur (sevag inc rush tmtc)
-                //s'occuper de l'UX
-          
-            /*block.Text = "This is some longer text in the TextBlock. " +
-                "We see how it wraps in this example. " +
-                "TextBlock is meant for longer text.";*/
         }
     }
+    
 };
