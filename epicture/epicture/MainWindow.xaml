@@ -15,7 +15,10 @@
                     <Image Source="{Binding Url}" Height="150" />
                 </DockPanel>
                 <DockPanel>
-                    <Button Content="Ajouter aux favories" Click="Button_Click" />
+                    <Button Content="Ajouter aux favories" Click="Add_Click" />
+                </DockPanel>
+                <DockPanel>
+                    <Button Content="Supprimer des favories" Click="Remove_Click" />
                 </DockPanel>
             </StackPanel>
         </DataTemplate>
@@ -36,7 +39,7 @@
         <Button Content="OK"  Click="onTextChangedSearch" Margin="10"   HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" RenderTransformOrigin="-0.125,0.386">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="Icons/tick1.png"/>
+                    <Image Source="Icons/tick1.png" Margin="0,0,0,0.2"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
