@@ -16,18 +16,26 @@
                 </DockPanel>
                 <DockPanel>
                     <Button Content="Ajouter aux favories" Click="Add_Click" >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="Icons/add.png" Height="37"  Margin="31,0,0,0" RenderTransformOrigin="-0.528,0.372"/>
-                        </ControlTemplate>
-                    </Button.Template>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <Image Source="Icons/add.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
+                                    <TextBlock HorizontalAlignment="Center">Add to favorites</TextBlock>
+
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                 </DockPanel>
                 <DockPanel>
                     <Button Content="Supprimer des favories" Click="Remove_Click" >
                         <Button.Template>
                             <ControlTemplate>
-                                <Image Source="Icons/suprr.png" Height="37"  Margin="31,0,0,0" RenderTransformOrigin="-0.528,0.372"/>
+                                <StackPanel>
+                                    <Image Source="Icons/suprr.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
+                                    <TextBlock HorizontalAlignment="Center">Delete from favorites</TextBlock>
+
+                                </StackPanel>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
@@ -39,10 +47,13 @@
 
         <TextBox Name ="searching" Height="23" TextWrapping="Wrap" Text="" Margin="10,10,50,100" VerticalAlignment="Top"/>
 
-        <Button Content="Go to Favorite" Click="Display_Favoris" Name="Fav"  Margin="40"  HorizontalAlignment="left" VerticalAlignment="Top" Height="45">
+        <Button Content="Go to Favorite" Click="Display_Favoris" Name="Fav"  Margin="42,33,0,0"  HorizontalAlignment="left" VerticalAlignment="Top" Height="56" Width="148">
             <Button.Template>
                 <ControlTemplate>
-                    <Image Source="Icons/favoris.png" Height="37" Margin="31,0,0,0" RenderTransformOrigin="-0.528,0.372"/>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center">Go to favorite</TextBlock>
+                        <Image Source="Icons/favoris.png" Height="37" Margin="30,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
+                    </StackPanel>
                 </ControlTemplate>
             </Button.Template>
         </Button>
@@ -55,6 +66,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+
         <ComboBox Name="type"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,10,0" >
             <ComboBoxItem IsSelected="True">all types</ComboBoxItem>
             <ComboBoxItem>Jpg</ComboBoxItem>
