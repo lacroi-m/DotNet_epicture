@@ -21,35 +21,41 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        
-        <TextBox Name ="searching" Height="23" TextWrapping="Wrap" Text="" Margin="10,10,10,0" VerticalAlignment="Top"/>
-        <Button Grid.Row="2" Content="OK"  Click="onTextChangedSearch" Margin="40, 44, 200, 10" Width="90" VerticalAlignment="Top"/>
 
-        <ComboBox Name="type"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,40,0,0" >
+        <TextBox Name ="searching" Height="23" TextWrapping="Wrap" Text="" Margin="10,10,50,100" VerticalAlignment="Top"/>
+
+        <Button Content="Go to Favorite" Click="Display_Favoris" Name="Fav"  Margin="40"  HorizontalAlignment="left" VerticalAlignment="Top" Height="45">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Icons/favoris.png" Height="37" Margin="31,0,0,0" RenderTransformOrigin="-0.528,0.372"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
 
+        <Button Content="OK"  Click="onTextChangedSearch" Margin="10"   HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" RenderTransformOrigin="-0.125,0.386">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Icons/tick1.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <ComboBox Name="type"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,10,0" >
             <ComboBoxItem IsSelected="True">all types</ComboBoxItem>
             <ComboBoxItem>Jpg</ComboBoxItem>
             <ComboBoxItem>Png</ComboBoxItem>
             <ComboBoxItem>Gif</ComboBoxItem>
             <ComboBoxItem>Anigif</ComboBoxItem>
-
-
         </ComboBox>
-        <ComboBox Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,40,150,10" >
-
-
+        <ComboBox Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,173,0" >
             <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
             <ComboBoxItem>Small</ComboBoxItem>
             <ComboBoxItem>Mediuù</ComboBoxItem>
             <ComboBoxItem>Big</ComboBoxItem>
             <ComboBoxItem>Large</ComboBoxItem>
             <ComboBoxItem>Hudge</ComboBoxItem>
-
-
-
         </ComboBox>
-            <ListBox Name="listBox1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource listBoxTemplate}" Margin="10,90,10,10"/>
+        <ListBox Name="listBox1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource listBoxTemplate}" Margin="10,90,10,10"/>
 
 
     </Grid>

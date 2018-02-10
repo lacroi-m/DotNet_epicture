@@ -268,11 +268,9 @@ using System.Collections.ObjectModel;
 
 namespace epicture
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        int f = 0;
         public class ListBoxContent
         {
             public string Url { get; set; }
@@ -293,6 +291,14 @@ namespace epicture
         public ObservableCollection<ListBoxContent> Contents
         {
             get { return contents; }
+        }
+
+
+        public ObservableCollection<ListBoxContent> favoris = new ObservableCollection<ListBoxContent>();
+
+        public ObservableCollection<ListBoxContent> Favoris
+        {
+            get { return favoris; }
         }
 
         public MainWindow()
@@ -320,7 +326,7 @@ namespace epicture
             Imgur.API.Enums.ImageSize? Fileformat = null;
             if (format.Text == "Small")
                 Fileformat = Imgur.API.Enums.ImageSize.Small;
-            else if (format.Text == "Mediu!")
+            else if (format.Text == "Medium")
                 Fileformat = Imgur.API.Enums.ImageSize.Med;
             else if (format.Text == "Big")
                 Fileformat = Imgur.API.Enums.ImageSize.Big;
@@ -329,8 +335,9 @@ namespace epicture
             else if (format.Text == "Hudge")
                 Fileformat = Imgur.API.Enums.ImageSize.Huge;
 
-
-            var gallerys = await endpoint.SearchGalleryAdvancedAsync(search ,null, null ,null, Filetype, Fileformat, Imgur.API.Enums.GallerySortOrder.Time);
+            if (search == "")
+                return;
+            var gallerys = await endpoint.SearchGalleryAdvancedAsync(search, null, null, null, Filetype, Fileformat, Imgur.API.Enums.GallerySortOrder.Time);
             foreach (var gallery in gallerys)
             {
                 if (gallery.GetType() != typeof(Imgur.API.Models.Impl.GalleryAlbum))
@@ -341,7 +348,7 @@ namespace epicture
                     Contents.Add(content);
                     continue;
                 }
-                    Imgur.API.Models.Impl.GalleryAlbum tmp = (Imgur.API.Models.Impl.GalleryAlbum)gallery;
+                Imgur.API.Models.Impl.GalleryAlbum tmp = (Imgur.API.Models.Impl.GalleryAlbum)gallery;
                 foreach (var image in tmp.Images)
                 {
                     ListBoxContent content = new ListBoxContent();
@@ -351,10 +358,25 @@ namespace epicture
             }
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Display_Favoris(object send , RoutedEventArgs e)
         {
-            var endpoint = new ImageEndpoint(client);
-            await endpoint.FavoriteImageAsync(((ListBoxContent)((Button)sender).DataContext).Img.Id);
+            Contents.Clear();
+            foreach(var favoris in Favoris)
+            {
+                Contents.Add(favoris);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Image img = ((StackPanel)((DockPanel)((Button)sender).Parent).Parent).Children.OfType<DockPanel>().First().Children.OfType<Image>().First();
+            ListBoxContent favoris = new ListBoxContent();
+            if (img.Source.ToString() != null)
+            {
+                favoris.Url = img.Source.ToString();
+                //searching.Text = favoris.Url;
+                Favoris.Add(favoris);
+            }
         }
     }
 }
