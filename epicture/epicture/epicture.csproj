@@ -112,5 +112,17 @@
   <ItemGroup>
     <Resource Include="Icons\favoris.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fav\Swap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fav\FavList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\suprr.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
