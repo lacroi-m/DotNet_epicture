@@ -24,7 +24,6 @@
                                 <StackPanel>
                                     <Image Source="Icons/add.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
                                     <TextBlock HorizontalAlignment="Center">Add to favorites</TextBlock>
-
                                 </StackPanel>
                             </ControlTemplate>
                         </Button.Template>
