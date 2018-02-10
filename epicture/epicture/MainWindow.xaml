@@ -50,10 +50,31 @@
         <ComboBox Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,173,0" >
             <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
             <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Mediuù</ComboBoxItem>
+            <ComboBoxItem>Medium</ComboBoxItem>
             <ComboBoxItem>Big</ComboBoxItem>
             <ComboBoxItem>Large</ComboBoxItem>
-            <ComboBoxItem>Hudge</ComboBoxItem>
+            <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="3.566"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.935"/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <Image Source="Icons/tick1.png" Height="18" Width="20" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="4.528"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <ComboBoxItem Content="Hudge"/>
+
+            </StackPanel>
         </ComboBox>
         <ListBox Name="listBox1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource listBoxTemplate}" Margin="10,90,10,10"/>
 
