@@ -78,34 +78,70 @@
         </ComboBox>
         <ComboBox  Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,173,0" >
             <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Big</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
+            <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+                <Image Source="Icons/size.png" Height="16" Width="18" RenderTransformOrigin="0.5,0.5">
+
+                </Image>
+                <ComboBoxItem Content="     Small" Width="82"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+
+                <Image Source="Icons/size.png" Height="20" Width="21" RenderTransformOrigin="0.5,0.5">
+
+                </Image>
+                <ComboBoxItem Content="     Medium" Width="102"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+
+                <Image Source="Icons/size.png" Height="26" Width="25" RenderTransformOrigin="0.5,0.5">
+
+                </Image>
+                <ComboBoxItem Content="    Big" Width="68"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+
+                <Image Source="Icons/size.png" Height="32" Width="28" >
+                </Image>
+                <ComboBoxItem Content="  Large" Width="52"/>
+
+            </StackPanel>
+
+
+
             <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
                 <StackPanel.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
-                        <SkewTransform AngleX="3.566"/>
                         <RotateTransform/>
-                        <TranslateTransform X="-0.935"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
-                <Image Source="Icons/tick1.png" Height="18" Width="20" RenderTransformOrigin="0.5,0.5">
+                <Image Source="Icons/size.png" Height="38" Width="33"  >
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="4.528"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-                <ComboBoxItem Content="Hudge"/>
+                <ComboBoxItem Content=" Hudge" Width="71">
+                    <ComboBoxItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.33"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ComboBoxItem.RenderTransform>
+                </ComboBoxItem>
 
             </StackPanel>
         </ComboBox>
-        <ListBox Name="listBox1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource listBoxTemplate}" Margin="10,90,10,10"/>
+        <ListBox Name="listBox1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource listBoxTemplate}" Margin="10,81,10,19"/>
 
 
     </Grid>
