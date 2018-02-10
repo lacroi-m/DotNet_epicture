@@ -344,8 +344,9 @@ namespace epicture
 
         private async void onTextChangedSearch(object sender, RoutedEventArgs e)
         {
-            Contents.Clear();
+            favoriteDisplay = false;
             string search = searching.Text;
+            Contents.Clear();
             var endpoint = new GalleryEndpoint(client);
             Imgur.API.Enums.ImageFileType? Filetype = null;
             if (type.Text == "Jpg")
@@ -391,7 +392,7 @@ namespace epicture
                 }
             }
         }
-
+        bool favoriteDisplay = false;
         private void Display_Favoris(object send , RoutedEventArgs e)
         {
             Contents.Clear();
@@ -399,6 +400,7 @@ namespace epicture
             {
                 Contents.Add(favoris);
             }
+            favoriteDisplay = true;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -414,14 +416,24 @@ namespace epicture
                     FavListTxt.WriteLine(img.Source.ToString());
                     FavListTxt.Close();
                 }
-                Favoris.Add(favoris);
+                int i = -1;
+                if (favoriteDisplay == false)
+                    Favoris.Add(favoris);
+                foreach (var favorispars in Favoris)
+                {
+                    if (Contents[++i].Url == img.Source.ToString() && favoriteDisplay == false)
+                    {
+                        Contents.RemoveAt(i);
+                        break;
+                    }
+                }
             }
         }
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             Image img = ((StackPanel)((DockPanel)((Button)sender).Parent).Parent).Children.OfType<DockPanel>().First().Children.OfType<Image>().First();
             ListBoxContent locfavoris = new ListBoxContent();
-            if (img.Source.ToString() != null)
+            if (img.Source.ToString() != string.Empty)
             {
                 int i = -1;
                 foreach (var favoris in Favoris)
