@@ -107,9 +107,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\tick1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\favoris.png" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tick1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
