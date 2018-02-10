@@ -9,13 +9,16 @@
         DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Window.Resources>
+        <Style x:Key="Style" TargetType="{x:Type Button}">
+            <Setter Property="Control.Background" Value="Yellow"/>
+        </Style>
         <DataTemplate x:Key="listBoxTemplate">
             <StackPanel Margin="3">
                 <DockPanel>
                     <Image Source="{Binding Url}" Height="150" />
                 </DockPanel>
                 <DockPanel>
-                    <Button Content="Ajouter aux favories" Click="Add_Click" >
+                    <Button Style="{StaticResource roundButtonTemplate}" Content="Ajouter aux favories" Background="#CC41B1E1" Click="Add_Click" >
                         <Button.Template>
                             <ControlTemplate>
                                 <StackPanel>
@@ -45,9 +48,10 @@
     </Window.Resources>
     <Grid>
 
+
         <TextBox Name ="searching" Height="23" TextWrapping="Wrap" Text="" Margin="10,10,50,100" VerticalAlignment="Top"/>
 
-        <Button Content="Go to Favorite" Click="Display_Favoris" Name="Fav"  Margin="42,33,0,0"  HorizontalAlignment="left" VerticalAlignment="Top" Height="56" Width="148">
+        <Button Content="Go to Favorite" Style="{StaticResource Style}" Click="Display_Favoris" Name="Fav"  Margin="45,33,0,0"  HorizontalAlignment="left" VerticalAlignment="Top" Height="56" Width="148">
             <Button.Template>
                 <ControlTemplate>
                     <StackPanel>
@@ -57,7 +61,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
 
         <Button Content="OK"  Click="onTextChangedSearch" Margin="10"   HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" RenderTransformOrigin="-0.125,0.386">
             <Button.Template>
@@ -74,7 +77,7 @@
             <ComboBoxItem>Gif</ComboBoxItem>
             <ComboBoxItem>Anigif</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,173,0" >
+        <ComboBox  Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,47,173,0" >
             <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
             <ComboBoxItem>Small</ComboBoxItem>
             <ComboBoxItem>Medium</ComboBoxItem>
