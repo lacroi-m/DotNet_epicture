@@ -127,30 +127,3 @@
 
     </Grid>
 </Window>
-
-<!-- Window x:Class="epicture.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:epicture"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <Window.Resources>
-        <DataTemplate x:Key="DisplayImageTemplate">
-            <StackPanel Margin="3">
-                <DockPanel>
-                    <Image Source="{Binding contents}" Height="150" />
-                    </DockPanel>
-            </StackPanel>
-                </DataTemplate>
-    </Window.Resources>
-    <Grid>
-        <TextBox Grid.Row="1"  Name="MyTextBox" Margin="10" VerticalAlignment="Top"/>
-        <Button Grid.Row="2" Content="OK" Click="Button_Click" Margin="40" VerticalAlignment="Top"/>
-        <ListBox Grid.Row="3" Margin="100" Name="DisplayImage1" ItemsSource="{Binding Contents}" ItemTemplate="{StaticResource DisplayImageTemplate}" SelectionChanged="listBox1_SelectionChanged"/>
-    </Grid>
-</>
-    
--->
