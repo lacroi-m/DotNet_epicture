@@ -79,7 +79,7 @@
         </ComboBox>
         <ComboBox  FontSize="18" FontFamily="Arial" Name="format"  Height="30" Width="121" VerticalAlignment="Top"   HorizontalAlignment="Right" Margin="0,44,173,0" >
             <ComboBoxItem IsSelected="True">all size</ComboBoxItem>
-            <ComboBoxItem Content="     Small" Width="82"/>
+            <ComboBoxItem Content="Small"/>
 
 
             <ComboBoxItem Content="Medium"/>
