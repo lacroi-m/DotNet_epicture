@@ -22,8 +22,8 @@
                         <Button.Template>
                             <ControlTemplate>
                                 <Grid x:Name="ADDFAV" Margin="0,7,0,10">
-                                    <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
-                                        <Image Source="Icons/add.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
+                                    <StackPanel Cursor="Hand" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+                                        <Image Cursor="Hand"  Source="Icons/add.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
                                         <TextBlock  Foreground="Silver"   FontSize="18" FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center">Add to favorites</TextBlock>
                                     </StackPanel>
                                 </Grid>
@@ -40,15 +40,15 @@
                     <Button Content="Supprimer des favories" Click="Remove_Click" >
                         <Button.Template>
                             <ControlTemplate>
-                                <Grid x:Name="ADDFAV" Margin="0,7,0,10">
-                                    <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
-                                        <Image Source="Icons/suprr.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
+                                <Grid x:Name="SUPPRFAV" Margin="0,7,0,10">
+                                    <StackPanel Cursor="Hand" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+                                        <Image Cursor="Hand" Source="Icons/suprr.png" Height="37"  Margin="31,0,30,10" RenderTransformOrigin="-0.528,0.372"/>
                                         <TextBlock  Foreground="Silver"   FontSize="18" FontFamily="Arial"  VerticalAlignment="Center" HorizontalAlignment="Center">Delete from favorites</TextBlock>
                                     </StackPanel>
                                 </Grid>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="ADDFAV" Property="Background" Value="Black" />
+                                        <Setter TargetName="SUPPRFAV" Property="Background" Value="Black" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
 
@@ -69,10 +69,10 @@
             <Button.Template>
                 <ControlTemplate>
                     <Grid x:Name="btn" Margin="0,7,0,10">
-                        <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel Cursor="Hand" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
                             <TextBlock  VerticalAlignment="Center" FontWeight="UltraBold" Foreground="Silver"
  FontSize="16" HorizontalAlignment="Center"  Width="113" ><Run Text="Go to favorites"/></TextBlock>
-                            <Image Cursor="Hand"  Margin="10,-2,0,0" Source="Icons/favoris.png" Height="39" HorizontalAlignment="left" RenderTransformOrigin="-0.529,0.372"/>
+                            <Image  Margin="10,-2,0,0" Source="Icons/favoris.png" Height="39" HorizontalAlignment="left" RenderTransformOrigin="-0.529,0.372"/>
                         </StackPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
