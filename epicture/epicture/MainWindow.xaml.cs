@@ -18,6 +18,7 @@ using Imgur.API.Endpoints.Impl;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Diagnostics;
+using System.Net;
 
 namespace epicture
 {
@@ -93,6 +94,24 @@ namespace epicture
             }
         }
 
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    using (client.OpenRead("http://clients3.google.com/generate_204"))
+                    { 
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private async void onTextChangedSearch(object sender, RoutedEventArgs e)
         {
             favoriteDisplay = false;
@@ -123,6 +142,7 @@ namespace epicture
 
             if (search == "")
                 return;
+            while (CheckForInternetConnection() == false);
             var gallerys = await endpoint.SearchGalleryAdvancedAsync(search, null, null, null, Filetype, Fileformat, Imgur.API.Enums.GallerySortOrder.Time);
             foreach (var gallery in gallerys)
             {
